@@ -1,38 +1,171 @@
-.App {
-  text-align: center;
+/* === Background & Global Settings === */
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background: linear-gradient(135deg, #fff1cd, #ce7b00, #fff1cd);
+  background-size: 200% 200%;
+  animation: gradientShift 15s ease infinite;
+  color: #333;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+@keyframes gradientShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+/* === Layout Container === */
+.main-wrapper {
   display: flex;
   flex-direction: column;
   align-items: center;
+  padding: 2rem;
+  margin: 1rem;
+  text-align: center;
+  position: relative;
+  border: 4px double #e4af60;
+  border-radius: 16px;
+  background: linear-gradient(135deg, #f8dd99, #ce7b00, #edd18b);
+  backdrop-filter: blur(4px);
+}
+
+/* === Corner Borders === */
+.corner {
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  border: 3px solid #ebbe7a;
+}
+
+.corner.tl { top: -3px; left: -3px; border-right: none; border-bottom: none; }
+.corner.tr { top: -3px; right: -3px; border-left: none; border-bottom: none; }
+.corner.bl { bottom: -3px; left: -3px; border-right: none; border-top: none; }
+.corner.br { bottom: -3px; right: -3px; border-left: none; border-top: none; }
+
+/* === Header === */
+.app-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.logo {
+  width: 120px;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 50%;
+  margin-bottom: 1rem;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+.title {
+  font-size: 2.5rem;
+  color: #014d36;
+  margin: 0;
+}
+
+/* === Coming Soon === */
+.coming-soon {
+  font-size: 2.8rem;
+  color: #310369;
+  margin: 1rem 0 2rem;
+}
+
+/* === Text Blocks === */
+.description {
+  max-width: 700px;
+  margin-bottom: 2rem;
+  font-size: 1.2rem;
+  padding: 0 1rem;
+}
+
+/* === Cards === */
+.row {
+  display: flex;
+  flex-wrap: wrap;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  gap: 1rem;
+  margin-bottom: 2rem;
 }
 
-.App-link {
-  color: #61dafb;
+.card {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  transition: transform 0.3s ease;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.card:hover {
+  transform: translateY(-5px);
+}
+
+.half {
+  flex: 0 0 45%;
+  max-width: 300px;
+}
+
+.image3-wrapper {
+  max-width: 500px;
+  margin-bottom: 2rem;
+}
+
+.gallery-img,
+.image3-img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* === Footer === */
+.footer {
+  font-size: 0.9rem;
+  color: #461515;
+  margin-top: 3rem;
+  padding-bottom: 1rem;
+}
+
+/* === Responsive Design === */
+@media (max-width: 768px) {
+  .half {
+    flex: 0 0 90%;
+    max-width: 90%;
   }
-  to {
-    transform: rotate(360deg);
+
+  .title {
+    font-size: 2rem;
+  }
+
+  .coming-soon {
+    font-size: 1.5rem;
+  }
+
+  .description {
+    font-size: 1rem;
+  }
+
+  .logo {
+    width: 90px;
+    height: 90px;
+  }
+}
+
+@media (max-width: 480px) {
+  .title {
+    font-size: 1.8rem;
+  }
+
+  .coming-soon {
+    font-size: 1.3rem;
+  }
+
+  .footer {
+    font-size: 0.8rem;
+  }
+
+  .main-wrapper {
+    margin: 1rem;
+    padding: 1rem;
   }
 }
