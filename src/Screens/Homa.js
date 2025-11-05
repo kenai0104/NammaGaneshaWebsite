@@ -200,7 +200,7 @@ export default function Homa() {
           role="tablist"
           aria-label="Why Perform a Homa tabs"
           onKeyDown={onTabsKeyDown}
-          style={{ ["--tabs"]: tabs.length }}
+          style={{ "--tabs": tabs.length }}
         >
           {tabs.map((tab, i) => (
             <button
@@ -219,7 +219,7 @@ export default function Homa() {
 
           <span
             className="tab-indicator"
-            style={{ ["--index"]: activeIndex }}
+            style={{ "--index": activeIndex }}
             aria-hidden="true"
           />
         </div>

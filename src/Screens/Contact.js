@@ -11,8 +11,6 @@ export default function Contact() {
 
   const [name, setName] = useState("");
   const [phone, setPhone] = useState("");
-  const [tower, setTower] = useState("");
-  const [flat, setFlat] = useState("");
   const [poojaName, setPoojaName] = useState("");
   const [date, setDate] = useState(today);
   const [selectedNakshatra, setSelectedNakshatra] = useState(null);
